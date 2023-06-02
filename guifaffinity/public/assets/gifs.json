@@ -1,0 +1,33 @@
+{
+    "gifs": [
+    {
+      "name": "1",
+      "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
+      "likes": 15,
+      "date": "2023-06-02"
+    },
+    {
+      "name": "2",
+      "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
+      "likes": 5,
+      "date": "2023-06-01"
+    },
+    {
+      "name": "3",
+      "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
+      "likes": 10,
+      "date": "2023-06-04"
+    },
+    {
+      "name": "4",
+      "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
+      "likes": 11,
+      "date": "2023-06-03"
+    },
+    {
+      "name": "5",
+      "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
+      "likes": 12,
+      "date": "2023-03-02"
+    }]
+  }
