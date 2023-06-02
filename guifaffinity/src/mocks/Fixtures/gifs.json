@@ -4,30 +4,35 @@
       "name": "1",
       "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
       "likes": 15,
-      "date": "2023-06-02"
+      "date": "2023-06-02",
+      "alt": "anAlternativeText"
     },
     {
       "name": "2",
       "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
       "likes": 5,
-      "date": "2023-06-01"
+      "date": "2023-06-01",
+      "alt": "anAlternativeText2"
     },
     {
       "name": "3",
       "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
       "likes": 10,
-      "date": "2023-06-04"
+      "date": "2023-06-04",
+      "alt": "anAlternativeText3"
     },
     {
       "name": "4",
       "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
       "likes": 11,
-      "date": "2023-06-03"
+      "date": "2023-06-03",
+      "alt": "anAlternativeText4"
     },
     {
       "name": "5",
       "src": "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
       "likes": 12,
-      "date": "2023-03-02"
+      "date": "2023-03-02",
+      "alt": "anAlternativeText5"
     }]
   }
