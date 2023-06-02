@@ -18,9 +18,9 @@ function App() {
             <h2>Los guif más trendings del momento</h2>
           </div>
           <div className='panel__gifs'>
-            <img src='assets/Gif1.svg' alt='gif not found'/>
-            <img src='assets/Gif1.svg' alt='gif not found'/>
-            <img src='assets/Gif1.svg' alt='gif not found'/>
+            <img className='gif' src='assets/Gif1.svg' alt='gif not found'/>
+            <img className='gif' src='assets/Gif1.svg' alt='gif not found'/>
+            <img className='gif' src='assets/Gif1.svg' alt='gif not found'/>
           </div>
         </div>
       </section>
