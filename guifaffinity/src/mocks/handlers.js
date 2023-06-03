@@ -6,7 +6,7 @@ export const handlers = [
   rest.get('/gifs', (req, res, ctx) => {
     return res(
       ctx.status(200),
-      ctx.json({gifs}),
+      ctx.json(gifs),
     )
   }),
 ]

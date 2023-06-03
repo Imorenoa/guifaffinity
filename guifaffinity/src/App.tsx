@@ -18,7 +18,7 @@ function App() {
         'http://localhost:3000/gifs',
       )
       const res = await response.json()
-      setGifs(res.results)
+      setGifs(res.results) // gifs en server, pero sin gifs en test
     };
     loadGifs();
   }, [])
