@@ -28,7 +28,7 @@ function App() {
         <img
           className="logo"
           src="assets/GuifaffinityLogo.svg"
-          alt="logo not found"
+          alt="Logo Guifaffinity"
         />
       </header>
       <section>
