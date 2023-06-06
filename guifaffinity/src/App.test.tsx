@@ -4,26 +4,24 @@ import App from "./App";
 import { server } from "./mocks/server.js";
 import { rest } from "msw";
 
-test("displays a gif", async () => {
-  // hay que crear un gif con texto alternativo "anAlternativeText"
+test('displays a gif', async () => {
   const retrievedGif = {
     name: "1",
     src: "https://media.giphy.com/media/xT77XZrTKOxycjaYvK/giphy.gif",
     likes: 15,
     date: "2023-06-02",
-    alt: "Gato con gafas",
-  };
-
-  // Hay que mockear la llamada de petición de gifs
+    alt: "anAlternativeText"
+  }
   server.use(
-    rest.get("http://localhost:3000/gifs", (req, res, ctx) => {
-      return res(ctx.json({ results: [retrievedGif] }));
-    })
-  );
-  render(<App />);
-  // obtenemos el gif mediante su texto alternativo
-  const screenedGif = await screen.findByAltText("Gato con gafas");
+    rest.get('http://localhost:3000/gifs', (req, res, ctx) => {
+      return res(
+        ctx.json({results: [retrievedGif]})
+      )
+    }),
+  )
 
-  // corroboramos que el gif es visible
+  render(<App />);
+  const screenedGif = await screen.findByAltText("anAlternativeText")
+  
   expect(screenedGif).toBeVisible();
 });
