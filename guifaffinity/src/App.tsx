@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 interface Gif {
-  name: string;
+  id: string;
   src: string;
   likes: number;
   date: Date;
@@ -34,8 +34,12 @@ function App() {
       <section>
         <div className="search">
           <input placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
-          <button>
-            <img src="assets/MagnifyingGlass.svg" alt="Botón de búsqueda"></img>
+          <button className="search__button">
+            <img
+              className="search__button__image"
+              src="assets/MagnifyingGlass.svg"
+              alt="Botón de búsqueda"
+            ></img>
           </button>
         </div>
         <div className="panel">
@@ -45,7 +49,7 @@ function App() {
           </div>
           <div className="panel__gifs">
             {gifs.map((gif) => (
-              <img className="gif" src={gif.src} alt={gif.alt} />
+              <img className="gif" key={gif.id} src={gif.src} alt={gif.alt} />
             ))}
           </div>
         </div>
