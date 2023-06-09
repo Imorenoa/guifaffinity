@@ -9,6 +9,11 @@ body {
   );
   max-width: 1132px;
 }
+
+header {
+  margin-bottom: var(--spacing-xlarge);
+}
+
 .search {
   display: flex;
   flex-direction: row;
@@ -16,6 +21,7 @@ body {
   border: none;
   border-radius: 15px;
   overflow: auto;
+  margin-bottom: var(--spacing-xlarge);
 }
 
 .search__input {
@@ -49,6 +55,8 @@ body {
 .panel__title {
   display: flex;
   gap: 1.25rem;
+  margin-bottom: var(--spacing-medium);
+
 }
 
 h2 {
