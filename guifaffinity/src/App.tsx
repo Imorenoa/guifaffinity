@@ -33,10 +33,10 @@ function App() {
       </header>
       <section>
         <div className="search">
-          <input placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
+          <input className="search__input" placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
           <button className="search__button">
             <img
-              className="search__button__image"
+              className="search__button--image"
               src="assets/MagnifyingGlass.svg"
               alt="Botón de búsqueda"
             ></img>
