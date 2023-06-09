@@ -20,6 +20,8 @@ body {
 
 .search__input {
   flex-grow: 1;
+  font-size: var( --font-size-h4);
+  padding: var(--spacing-mini) var(--spacing-base)
 }
 
 .search__button {
