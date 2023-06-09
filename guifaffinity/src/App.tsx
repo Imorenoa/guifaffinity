@@ -33,7 +33,7 @@ function App() {
       </header>
       <section>
         <div className="search">
-          <input></input>
+          <input placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
           <button></button>
         </div>
         <div className="panel">
