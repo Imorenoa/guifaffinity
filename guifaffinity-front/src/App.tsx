@@ -34,9 +34,7 @@ function App() {
       <section>
         <div className="search">
           <input placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
-          <button>
-            <img src="assets/MagnifyingGlass.svg" alt="Botón de búsqueda"></img>
-          </button>
+          <button></button>
         </div>
         <div className="panel">
           <div className="panel__title">
