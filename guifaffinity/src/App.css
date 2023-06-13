@@ -1,1 +1,14 @@
+.panel__gifs {
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-template-rows: repeat(2, minmax(200px, max-content));
+}
 
+.gif {
+    width: 200px;
+    height: 200px;
+    
+}
