@@ -44,8 +44,8 @@ function App() {
         </div>
         <div className="panel">
           <div className="panel__title">
-            <img src="assets/Arrow1.svg" alt="not found" />
-            <h2>Los guif más trendings del momento</h2>
+            <img className="panel__title--icon" src="assets/Arrow1.svg" alt="not found" />
+            <h2 className="panel__title--text">Los guif más trendings del momento</h2>
           </div>
           <div className="panel__gifs">
             {gifs.map((gif) => (
