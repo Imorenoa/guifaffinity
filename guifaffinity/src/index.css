@@ -6,8 +6,5 @@ body {
     var(--color-blue) 0%,
     var(--color-purple) 50%,
     var(--color-yellow) 100%
-  );
-  
-  display: flex;
-  justify-content: center;
+  ); 
 }
