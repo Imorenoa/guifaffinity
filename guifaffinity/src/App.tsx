@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 interface Gif {
-  name: string;
+  id: string;
   src: string;
   likes: number;
   date: Date;
@@ -24,30 +24,38 @@ function App() {
 
   return (
     <div className="app">
-      <header>
-        <img
-          className="logo"
-          src="assets/GuifaffinityLogo.svg"
-          alt="Logo Guifaffinity"
-        />
-      </header>
-      <section>
-        <div className="search">
-          <input placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
-          <button></button>
-        </div>
-        <div className="panel">
-          <div className="panel__title">
-            <img src="assets/Arrow1.svg" alt="not found" />
-            <h2>Los guif más trendings del momento</h2>
+      <main className="mainContainer">
+        <header>
+          <img
+            className="logo"
+            src="assets/GuifaffinityLogo.svg"
+            alt="Logo Guifaffinity"
+          />
+        </header>
+        <section>
+          <div className="search">
+            <input className="search__input" placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
+            <button className="search__button">
+              <img
+                className="search__button--image"
+                src="assets/MagnifyingGlass.svg"
+                alt="Botón de búsqueda"
+              ></img>
+            </button>
           </div>
-          <div className="panel__gifs">
-            {gifs.map((gif) => (
-              <img className="gif" src={gif.src} alt={gif.alt} />
-            ))}
+          <div className="panel">
+            <div className="panel__title">
+              <img className="panel__title--icon" src="assets/Arrow1.svg" alt="not found" />
+              <h2 className="panel__title--text">Los guif más trendings del momento</h2>
+            </div>
+            <div className="panel__gifs">
+              {gifs.map((gif) => (
+                <img className="gif" key={gif.id} src={gif.src} alt={gif.alt} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 }
