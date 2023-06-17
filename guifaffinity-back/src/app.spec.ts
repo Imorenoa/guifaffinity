@@ -45,10 +45,19 @@ describe("GET /api/gifs", () => {
     const response = await request(app).get("/api/gifs");
 
     const props: string[] = Object.keys(gif);
-    response.body.forEach((databaseGif: Meme) => {
+    response.body.forEach((returnedGif: Gif) => {
       props.forEach((prop) => {
-        expect(databaseGif).toHaveProperty(prop);
+        expect(returnedGif).toHaveProperty(prop);
       });
+    });
+  });
+
+  it("responds filtered by tag", async () => {
+    const tag = "movie";
+    const response = await request(app).get(`/api/gifs?tag=${tag}`);
+
+    response.body.forEach((returnedGif: Gif) => {
+      expect(returnedGif.tags).toContain(`#${tag}`);
     });
   });
 });
