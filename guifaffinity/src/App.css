@@ -16,14 +16,14 @@
   margin: 0 auto;
   padding: var(--spacing-large);
 }
-  
+
 header {
   margin-bottom: var(--spacing-xlarge);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-  
+
 .search {
   display: flex;
   flex-direction: row;
@@ -38,7 +38,7 @@ header {
   flex-grow: 1;
   font-size: var(--font-size-h4);
   line-height: var(--line-height-h4);
-  padding: var(--spacing-mini) var(--spacing-base)
+  padding: var(--spacing-mini) var(--spacing-base);
 }
 
 .search__button {
@@ -48,6 +48,7 @@ header {
   padding: 10px 20px;
   width: 4.375rem;
   border: none;
+  cursor: pointer;
   background: linear-gradient(
     135deg,
     var(--color-yellow) 0%,
@@ -73,7 +74,7 @@ header {
   margin-bottom: var(--spacing-medium);
 }
 
-.panel__title--icon{
+.panel__title--icon {
   margin-top: var(--spacing-small);
   width: 2.2rem;
 }
