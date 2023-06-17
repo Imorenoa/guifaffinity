@@ -29,7 +29,9 @@ function App() {
     }
   };
 
-  const getFilteredGifs = () => {};
+  const getFilteredGifs = () => {
+    fetch(`http://localhost:3001/gifs?tags=${searchInput}`);
+  };
 
   return (
     <div className="app">
