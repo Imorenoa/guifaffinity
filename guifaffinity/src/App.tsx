@@ -21,6 +21,15 @@ function App() {
     };
     loadGifs();
   }, []);
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target) {
+      setSearchInput(event.target.value);
+    }
+  };
+
+  const getFilteredGifs = () => {};
 
   return (
     <div className="app">
@@ -34,8 +43,14 @@ function App() {
         </header>
         <section>
           <div className="search">
-            <input className="search__input" placeholder="¿Qué quieres buscar? ¡Encuéntralo!"></input>
-            <button className="search__button">
+            <input
+              className="search__input"
+              placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
+              value={searchInput}
+              onChange={handleInputChange}
+              onKeyDown={getFilteredGifs}
+            ></input>
+            <button className="search__button" onClick={getFilteredGifs}>
               <img
                 className="search__button--image"
                 src="assets/MagnifyingGlass.svg"
@@ -45,8 +60,14 @@ function App() {
           </div>
           <div className="panel">
             <div className="panel__title">
-              <img className="panel__title--icon" src="assets/Arrow1.svg" alt="not found" />
-              <h2 className="panel__title--text">Los guif más trendings del momento</h2>
+              <img
+                className="panel__title--icon"
+                src="assets/Arrow1.svg"
+                alt="Icono de busqueda"
+              />
+              <h2 className="panel__title--text">
+                Los guif más trendings del momento
+              </h2>
             </div>
             <div className="panel__gifs">
               {gifs.map((gif) => (
