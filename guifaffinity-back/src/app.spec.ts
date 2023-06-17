@@ -7,6 +7,24 @@ import Memory from "lowdb/adapters/Memory";
 import { DatabaseSchema } from "./DatabaseSchema";
 
 describe("GET /api/gifs", () => {
+  interface Gif {
+    id: string;
+    src: string;
+    likes: number;
+    date: string;
+    alt: string;
+    tags: string[];
+  }
+
+  const gif: Gif = {
+    id: "YleuWir5NTNVXkflSp",
+    src: "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif",
+    likes: 4,
+    date: "2020-08-20 02:24:22",
+    alt: "Movie Brazil GIF by MOODMAN",
+    tags: ["#movie", "#brazil", "#brazil the movie"],
+  };
+
   let app: Express;
 
   // Before each test
@@ -29,5 +47,15 @@ describe("GET /api/gifs", () => {
   it("responds with 50 elements", async () => {
     const response = await request(app).get("/api/gifs");
     expect(response.body).toHaveLength(50);
+  });
+
+  it("responds with specified interface", async () => {
+    const response = await request(app).get("/api/gifs");
+
+    const props: string[] = Object.keys(gif);
+
+    props.forEach((prop) => {
+      expect(response.body).toHaveProperty(prop);
+    });
   });
 });
