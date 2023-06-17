@@ -30,7 +30,7 @@ function App() {
   };
 
   const getFilteredGifs = () => {
-    fetch(`http://localhost:3001/gifs?tags=${searchInput}`);
+    fetch(`http://localhost:3001/gifs?tag=${searchInput}`);
   };
 
   return (
