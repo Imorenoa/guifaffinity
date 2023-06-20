@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const loadGifs = async () => {
-      const receivedGifs = await api.getGifs();
+      const receivedGifs = await api.getGifs("");
       setGifs(receivedGifs);
     };
     loadGifs();
@@ -30,9 +30,8 @@ function App() {
   };
 
   const getFilteredGifs = async () => {
-    // const response = await fetch(`http://localhost:3001/api/gifs?tag=${searchInput}`);
-    // const res = await response.json();
-    // setGifs(res.results);
+    const receivedGifs = await api.getGifs(searchInput);
+    setGifs(receivedGifs);
   };
 
   return (
@@ -52,7 +51,7 @@ function App() {
               placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
               value={searchInput}
               onChange={handleInputChange}
-              onKeyDown={getFilteredGifs}
+              onKeyUp={getFilteredGifs}
             ></input>
             <button className="search__button" onClick={getFilteredGifs}>
               <img
