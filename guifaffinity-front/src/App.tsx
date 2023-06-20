@@ -15,9 +15,9 @@ function App() {
 
   useEffect(() => {
     const loadGifs = async () => {
-      const response = await fetch("http://localhost:3000/gifs");
+      const response = await fetch("http://localhost:3001/api/gifs");
       const res = await response.json();
-      setGifs(res.results); // gifs en server, pero sin gifs en test
+      setGifs(res.results);
     };
     loadGifs();
   }, []);
@@ -29,8 +29,10 @@ function App() {
     }
   };
 
-  const getFilteredGifs = () => {
-    fetch(`http://localhost:3001/gifs?tag=${searchInput}`);
+  const getFilteredGifs = async () => {
+    const response = await fetch(`http://localhost:3001/api/gifs?tag=${searchInput}`);
+    const res = await response.json();
+    setGifs(res.results);
   };
 
   return (
