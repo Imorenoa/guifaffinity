@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { api } from "./api"
+import { Header } from "./header";
 
 interface Gif {
   id: string;
@@ -37,13 +38,7 @@ function App() {
   return (
     <div className="app">
       <main className="mainContainer">
-        <header>
-          <img
-            className="logo"
-            src="assets/GuifaffinityLogo.svg"
-            alt="Logo Guifaffinity"
-          />
-        </header>
+        <Header/>
         <section>
           <div className="search">
             <input
