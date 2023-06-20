@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { api } from "./api"
 
 interface Gif {
   id: string;
@@ -15,9 +16,8 @@ function App() {
 
   useEffect(() => {
     const loadGifs = async () => {
-      const response = await fetch("http://localhost:3001/api/gifs");
-      const res = await response.json();
-      setGifs(res.results);
+      const receivedGifs = await api.getGifs();
+      setGifs(receivedGifs);
     };
     loadGifs();
   }, []);
@@ -30,9 +30,9 @@ function App() {
   };
 
   const getFilteredGifs = async () => {
-    const response = await fetch(`http://localhost:3001/api/gifs?tag=${searchInput}`);
-    const res = await response.json();
-    setGifs(res.results);
+    // const response = await fetch(`http://localhost:3001/api/gifs?tag=${searchInput}`);
+    // const res = await response.json();
+    // setGifs(res.results);
   };
 
   return (
