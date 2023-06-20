@@ -17,7 +17,7 @@
   padding: var(--spacing-large);
 }
 
-header {
+Header {
   margin-bottom: var(--spacing-xlarge);
   display: flex;
   flex-direction: row;

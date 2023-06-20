@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { api } from "./api"
-import { Header } from "./header";
+import { Header } from "./components/header";
+import { Search } from "./components/search";
 
 interface Gif {
   id: string;
@@ -22,6 +23,12 @@ function App() {
     };
     loadGifs();
   }, []);
+
+  const getFilteredGifs = async () => {
+    const receivedGifs = await api.getGifs(searchInput);
+    setGifs(receivedGifs);
+  };
+
   const [searchInput, setSearchInput] = useState("");
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,32 +37,12 @@ function App() {
     }
   };
 
-  const getFilteredGifs = async () => {
-    const receivedGifs = await api.getGifs(searchInput);
-    setGifs(receivedGifs);
-  };
-
   return (
     <div className="app">
       <main className="mainContainer">
         <Header/>
         <section>
-          <div className="search">
-            <input
-              className="search__input"
-              placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
-              value={searchInput}
-              onChange={handleInputChange}
-              onKeyUp={getFilteredGifs}
-            ></input>
-            <button className="search__button" onClick={getFilteredGifs}>
-              <img
-                className="search__button--image"
-                src="assets/MagnifyingGlass.svg"
-                alt="Botón de búsqueda"
-              ></img>
-            </button>
-          </div>
+          <Search value = {searchInput} onChange = {handleInputChange} action = {getFilteredGifs}></Search>
           <div className="panel">
             <div className="panel__title">
               <img
