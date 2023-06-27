@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { api } from "./api"
-import { Header } from "./components/header";
-import { Search } from "./components/search";
+import { Header } from "./components/header/header";
+import { Search } from "./components/search/search";
 
 interface Gif {
   id: string;

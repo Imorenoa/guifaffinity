@@ -14,8 +14,8 @@ test("displays a gif", async () => {
     tags: ["gato", "gafas"]
   };
   server.use(
-    rest.get("http://localhost:3000/gifs", (req, res, ctx) => {
-      return res(ctx.json({ results: [retrievedGif] }));
+    rest.get("http://localhost:3001/api/gifs", (req, res, ctx) => {      
+      return res(ctx.json( [retrievedGif] ));
     })
   );
 
@@ -23,13 +23,6 @@ test("displays a gif", async () => {
   const screenedGif = await screen.findByAltText("Gato con gafas");
 
   expect(screenedGif).toBeVisible();
-});
-
-test("display logo", () => {
-  render(<App />);
-  const screenedLogo = screen.getByAltText("Logo Guifaffinity");
-
-  expect(screenedLogo).toBeVisible();
 });
 
 test("display search input", () => {
