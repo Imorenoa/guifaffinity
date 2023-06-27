@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { api } from "../api"
+import { api } from "../api";
 import { Header } from "../components/header/header";
 import { Search } from "../components/search/search";
+import { Gif } from "../components/gif/gif";
 
 interface Gif {
   id: string;
@@ -40,9 +41,13 @@ function App() {
   return (
     <div className="app">
       <main className="mainContainer">
-        <Header/>
+        <Header />
         <section>
-          <Search value = {searchInput} onChange = {handleInputChange} action = {getFilteredGifs}></Search>
+          <Search
+            value={searchInput}
+            onChange={handleInputChange}
+            action={getFilteredGifs}
+          ></Search>
           <div className="panel">
             <div className="panel__title">
               <img
@@ -55,8 +60,8 @@ function App() {
               </h2>
             </div>
             <div className="panel__gifs">
-              {gifs.map((gif) => (
-                <img className="gif" key={gif.id} src={gif.src} alt={gif.alt} />
+              {gifs.map(({ id, src, alt }) => (
+                <Gif key={id} id={id} src={src} alt={alt} />
               ))}
             </div>
           </div>
