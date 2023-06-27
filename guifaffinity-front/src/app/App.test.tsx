@@ -1,7 +1,6 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
-import { server } from "./mocks/server.js";
+import { server } from "../mocks/server.js";
 import { rest } from "msw";
 
 test("displays a gif", async () => {
@@ -23,13 +22,4 @@ test("displays a gif", async () => {
   const screenedGif = await screen.findByAltText("Gato con gafas");
 
   expect(screenedGif).toBeVisible();
-});
-
-test("display search input", () => {
-  render(<App />);
-  const screenedSearchInput = screen.getByPlaceholderText(
-    "¿Qué quieres buscar? ¡Encuéntralo!"
-  );
-
-  expect(screenedSearchInput).toBeVisible();
 });

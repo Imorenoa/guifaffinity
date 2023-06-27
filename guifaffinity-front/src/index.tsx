@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./_styles/reset.css";
 import "./_styles/theme.css";
-import App from "./App";
+import App from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 
 if (process.env.NODE_ENV === 'development') {
