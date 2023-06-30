@@ -1,5 +1,7 @@
+import "./Header.css";
+
 export const Header = () => {
-  return(
+  return (
     <header>
       <img
         className="logo"
@@ -7,5 +9,5 @@ export const Header = () => {
         alt="Logo Guifaffinity"
       />
     </header>
-  )
-}
+  );
+};

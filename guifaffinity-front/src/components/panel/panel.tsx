@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Gif } from "../Gif";
 import { GifType } from "../../interfaces/gif.interface";
+import "./Panel.css";
 
 interface Props {
   gifs: GifType[];

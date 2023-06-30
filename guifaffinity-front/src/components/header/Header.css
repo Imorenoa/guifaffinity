@@ -1,0 +1,6 @@
+Header {
+  margin-bottom: var(--spacing-xlarge);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}

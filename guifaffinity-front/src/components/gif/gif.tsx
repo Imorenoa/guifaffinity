@@ -1,4 +1,5 @@
 import { FC } from "react";
+import "./Gif.css";
 
 interface Props {
   key: string;

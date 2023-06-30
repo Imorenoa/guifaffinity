@@ -1,4 +1,5 @@
 import { FC, KeyboardEventHandler, MouseEventHandler } from "react";
+import "./Search.css";
 
 interface Props {
   value: string;
