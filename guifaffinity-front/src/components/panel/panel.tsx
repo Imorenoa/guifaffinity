@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Gif } from "../Gif";
-import { GifType } from "../../interfaces/gif.interface";
+import { Gif as GifModel } from "../../domain/Gif";
 import "./Panel.css";
 
 interface Props {
-  gifs: GifType[];
+  gifs: GifModel[];
 }
 
 export const Panel: FC<Props> = ({ gifs }) => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { App } from "../../app/App";
-import { FetchGifsRepository } from "../../repositories/FetchGifsRepository";
+import { FetchGifsRepository } from "../../infrastructures/FetchGifsRepository";
 
 test("display search input", () => {
   const gifsRepository = new FetchGifsRepository();

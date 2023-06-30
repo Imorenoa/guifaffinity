@@ -4,7 +4,7 @@ import "./_styles/reset.css";
 import "./_styles/theme.css";
 import { App } from "./app/App";
 import reportWebVitals from "./reportWebVitals";
-import { FetchGifsRepository } from "./repositories/FetchGifsRepository";
+import { FetchGifsRepository } from "./infrastructures/FetchGifsRepository";
 
 const gifsRepository = new FetchGifsRepository();
 

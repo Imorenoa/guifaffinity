@@ -1,4 +1,4 @@
-export interface GifType {
+export interface GifDTO {
   id: string;
   src: string;
   likes: number;

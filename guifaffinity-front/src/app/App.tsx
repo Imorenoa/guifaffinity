@@ -2,27 +2,29 @@ import React, { FC, useEffect, useState } from "react";
 import "./App.css";
 import { Header } from "../components/Header/Header";
 import { Search } from "../components/Search";
-import { GifType } from "../interfaces/gif.interface";
 import { Panel } from "../components/Panel";
-import { GifsRepository } from "../repositories/GifsRepository";
+import { GifsRepository } from "../domain/GifsRepository";
+
+import { gifsServiceContainer } from "../services/_di/GifsService.container";
+import { Gif } from "../domain/Gif";
 
 interface Props {
   gifsRepository: GifsRepository;
 }
 
 export const App: FC<Props> = ({ gifsRepository }) => {
-  const [gifs, setGifs] = useState<GifType[]>([]);
+  const [gifs, setGifs] = useState<Gif[]>([]);
 
   useEffect(() => {
     const loadGifs = async () => {
-      const receivedGifs = await gifsRepository.getGifs("");
+      const receivedGifs = await gifsServiceContainer.getGifs("");
       setGifs(receivedGifs);
     };
     loadGifs();
   }, []);
 
   const getFilteredGifs = async () => {
-    const receivedGifs = await gifsRepository.getGifs(searchInput);
+    const receivedGifs = await gifsServiceContainer.getGifs(searchInput);
     setGifs(receivedGifs);
   };
 
