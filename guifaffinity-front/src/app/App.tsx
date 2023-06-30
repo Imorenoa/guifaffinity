@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { api } from "../api";
-import { Header } from "../components/header/header";
-import { Search } from "../components/search/search";
-import { Panel } from "../components/panel/panel";
+import { Header } from "../components/Header/Header";
+import { Search } from "../components/Search";
 import { GifType } from "../interfaces/gif.interface";
+import { Panel } from "../components/Panel";
 
 function App() {
   const [gifs, setGifs] = useState<GifType[]>([]);
