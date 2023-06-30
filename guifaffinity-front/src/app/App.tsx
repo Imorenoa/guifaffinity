@@ -3,19 +3,11 @@ import "./App.css";
 import { api } from "../api";
 import { Header } from "../components/header/header";
 import { Search } from "../components/search/search";
-import { Gif } from "../components/gif/gif";
-
-interface Gif {
-  id: string;
-  src: string;
-  likes: number;
-  date: string;
-  alt: string;
-  tags: string[];
-}
+import { Panel } from "../components/panel/panel";
+import { GifType } from "../interfaces/gif.interface";
 
 function App() {
-  const [gifs, setGifs] = useState<Gif[]>([]);
+  const [gifs, setGifs] = useState<GifType[]>([]);
 
   useEffect(() => {
     const loadGifs = async () => {
@@ -48,23 +40,7 @@ function App() {
             onChange={handleInputChange}
             action={getFilteredGifs}
           ></Search>
-          <div className="panel">
-            <div className="panel__title">
-              <img
-                className="panel__title--icon"
-                src="assets/Arrow1.svg"
-                alt="Icono de busqueda"
-              />
-              <h2 className="panel__title--text">
-                Los guif más trendings del momento
-              </h2>
-            </div>
-            <div className="panel__gifs">
-              {gifs.map(({ id, src, alt }) => (
-                <Gif key={id} id={id} src={src} alt={alt} />
-              ))}
-            </div>
-          </div>
+          <Panel gifs={gifs}></Panel>
         </section>
       </main>
     </div>
