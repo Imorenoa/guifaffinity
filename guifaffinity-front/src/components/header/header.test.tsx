@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import App from "../../app/App";
+import { Header } from "./header";
 
 test("display logo", () => {
-  render(<App />);
+  render(<Header />);
   const screenedLogo = screen.getByAltText("Logo Guifaffinity");
 
   expect(screenedLogo).toBeVisible();
