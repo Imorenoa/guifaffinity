@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import "./App.css";
-import { FetchGifsRepository } from "../repositories/FetchGifsRepository";
 import { Header } from "../components/Header/Header";
 import { Search } from "../components/Search";
 import { GifType } from "../interfaces/gif.interface";
 import { Panel } from "../components/Panel";
+import { GifsRepository } from "../repositories/GifsRepository";
 
-function App() {
-  const gifsRepository = new FetchGifsRepository();
+interface Props {
+  gifsRepository: GifsRepository;
+}
+
+export const App: FC<Props> = ({ gifsRepository }) => {
   const [gifs, setGifs] = useState<GifType[]>([]);
 
   useEffect(() => {
@@ -46,6 +49,4 @@ function App() {
       </main>
     </div>
   );
-}
-
-export default App;
+};

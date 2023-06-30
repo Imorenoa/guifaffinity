@@ -2,12 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./_styles/reset.css";
 import "./_styles/theme.css";
-import App from "./app/App";
+import { App } from "./app/App";
 import reportWebVitals from "./reportWebVitals";
+import { FetchGifsRepository } from "./repositories/FetchGifsRepository";
 
-if (process.env.NODE_ENV === 'development') {
-  const { worker } = require('./mocks/browser')
-  worker.start()
+const gifsRepository = new FetchGifsRepository();
+
+if (process.env.NODE_ENV === "development") {
+  const { worker } = require("./mocks/browser");
+  worker.start();
 }
 
 const root = ReactDOM.createRoot(
@@ -15,7 +18,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <App gifsRepository={gifsRepository} />
   </React.StrictMode>
 );
 
