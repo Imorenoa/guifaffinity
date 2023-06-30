@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import { api } from "../api";
+import { FetchGifsRepository } from "../repositories/FetchGifsRepository";
 import { Header } from "../components/Header/Header";
 import { Search } from "../components/Search";
 import { GifType } from "../interfaces/gif.interface";
 import { Panel } from "../components/Panel";
 
 function App() {
+  const gifsRepository = new FetchGifsRepository();
   const [gifs, setGifs] = useState<GifType[]>([]);
 
   useEffect(() => {
     const loadGifs = async () => {
-      const receivedGifs = await api.getGifs("");
+      const receivedGifs = await gifsRepository.getGifs("");
       setGifs(receivedGifs);
     };
     loadGifs();
   }, []);
 
   const getFilteredGifs = async () => {
-    const receivedGifs = await api.getGifs(searchInput);
+    const receivedGifs = await gifsRepository.getGifs(searchInput);
     setGifs(receivedGifs);
   };
 
