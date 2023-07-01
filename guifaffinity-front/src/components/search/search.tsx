@@ -13,7 +13,7 @@ export const Search: FC<Props> = ({ value, onChange, action }) => {
     <div className="search">
       <input
         className="search__input"
-        placeholder="¿Qué quieres buscarOOOOOO? ¡Encuéntralo!"
+        placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
         value={value}
         onChange={onChange}
         onKeyUp={action}
