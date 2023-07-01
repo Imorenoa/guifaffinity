@@ -1,27 +1,32 @@
 ## Name
+
 guifaffinity
 
 ## Description
+
 Project for Bikoschool
 
 ## Figma
+
 https://www.figma.com/file/JJlHcbY8OVzwLOExMihuYV/Sistema-de-dise%C3%B1o---Guifaffinity?type=design&node-id=6-2 q
 
 ## Installation
+
 Programmed with React, Typescript, Jest, Express.
 
 ## Roadmap
-* Todos: Esqueleto del proyecto (jerarquía de carpetas).
-* Maquetar página principal con imágenes del figma.
-* Componente gifs.
-    - Función de ordenar 3 gifs.
-    - Crear un json de 10 gifs de distintos tamaños con número de likes y fecha de subida, nombre, url.
-* Componente buscador.
-    - Historias de usuario de buscador.
-    
-## Semantic Commit Convention
-Format: `<type>(<scope>): <subject>`
 
+- Todos: Esqueleto del proyecto (jerarquía de carpetas).
+- Maquetar página principal con imágenes del figma.
+- Componente gifs.
+  - Función de ordenar 3 gifs.
+  - Crear un json de 10 gifs de distintos tamaños con número de likes y fecha de subida, nombre, url.
+- Componente buscador.
+  - Historias de usuario de buscador.
+
+## Semantic Commit Convention
+
+Format: `<type>(<scope>): <subject>`
 
 <strong>Example</strong>
 
