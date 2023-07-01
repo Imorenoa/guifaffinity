@@ -26,9 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    # - run: npm install
-    #   working-directory: guifaffinity-front
-    # - run: npm run start
-    #   working-directory: guifaffinity-front
-    # - run: npm test
-    #   working-directory: guifaffinity-front
+    - run: npm install
+      working-directory: guifaffinity-front
+    - run: npm run start
+      working-directory: guifaffinity-front
+    - run: npm test
+      working-directory: guifaffinity-front
