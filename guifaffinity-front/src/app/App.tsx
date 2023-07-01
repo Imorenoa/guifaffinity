@@ -3,16 +3,11 @@ import "./App.css";
 import { Header } from "../components/header/header";
 import { Search } from "../components/search";
 import { Panel } from "../components/panel";
-import { GifsRepository } from "../domain/GifsRepository";
 
 import { gifsServiceContainer } from "../services/_di/GifsService.container";
 import { Gif } from "../domain/Gif";
 
-interface Props {
-  gifsRepository: GifsRepository;
-}
-
-export const App: FC<Props> = ({ gifsRepository }) => {
+export const App = () => {
   const [gifs, setGifs] = useState<Gif[]>([]);
 
   useEffect(() => {

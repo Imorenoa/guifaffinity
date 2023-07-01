@@ -1,9 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import { Header } from "./header";
 
-test("display logo", () => {
-  render(<Header />);
-  const screenedLogo = screen.getByAltText("Logo Guifaffinity");
+describe("header component", () => {
+  test("display logo", () => {
+    render(<Header />);
+    const screenedLogo = screen.getByAltText("Logo Guifaffinity");
 
-  expect(screenedLogo).toBeVisible();
+    expect(screenedLogo).toBeVisible();
+  });
 });
