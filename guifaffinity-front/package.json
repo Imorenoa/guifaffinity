@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ci": "react-scripts build && react-scripts test --watchAll=false"
   },
   "lint-staged": {
     "*": "prettier --write",
