@@ -4,9 +4,6 @@ import "./_styles/reset.css";
 import "./_styles/theme.css";
 import { App } from "./app/App";
 import reportWebVitals from "./reportWebVitals";
-import { FetchGifsRepository } from "./infrastructures/FetchGifsRepository";
-
-const gifsRepository = new FetchGifsRepository();
 
 if (process.env.NODE_ENV === "development") {
   const { worker } = require("./mocks/browser");
@@ -18,7 +15,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App gifsRepository={gifsRepository} />
+    <App />
   </React.StrictMode>
 );
 
