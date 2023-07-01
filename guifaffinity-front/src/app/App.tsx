@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
 import "./App.css";
-import { Header } from "../components/Header/Header";
-import { Search } from "../components/Search";
-import { Panel } from "../components/Panel";
+import { Header } from "../components/header/header";
+import { Search } from "../components/search";
+import { Panel } from "../components/panel";
 import { GifsRepository } from "../domain/GifsRepository";
 
 import { gifsServiceContainer } from "../services/_di/GifsService.container";
