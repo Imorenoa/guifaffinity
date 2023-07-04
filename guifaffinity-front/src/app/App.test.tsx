@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import { App } from "./App";
 import { server } from "../mocks/server.js";
 import { rest } from "msw";
-import { FetchGifsRepository } from "../infrastructures/FetchGifsRepository";
 import { GifDTO } from "../infrastructures/GifDTO";
 import { Search } from "../components/search";
 
@@ -29,12 +28,12 @@ describe("app component", () => {
   });
 
   test("display search input", () => {
-    // render(<Search />);
-    // const screenedSearchInput = screen.getByPlaceholderText(
-    //   "¿Qué quieres buscar? ¡Encuéntralo!"
-    // );
+    const dummyCallback = (searchInput: string) => {};
+    render(<Search callback={dummyCallback} />);
+    const screenedSearchInput = screen.getByPlaceholderText(
+      "¿Qué quieres buscar? ¡Encuéntralo!"
+    );
 
-    // expect(screenedSearchInput).toBeVisible();
-    expect(1).toBe(1);
+    expect(screenedSearchInput).toBeVisible();
   });
 });

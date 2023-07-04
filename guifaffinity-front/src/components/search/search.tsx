@@ -13,6 +13,12 @@ export const Search: FC<Props> = ({ callback }) => {
     }
   };
 
+  const handleKeyDown = (event: { key: string }) => {
+    if (event.key === "Enter") {
+      callback(searchInput);
+    }
+  };
+
   const handleOnClick: MouseEventHandler<HTMLButtonElement> = (event) => {
     callback(searchInput);
   };
@@ -24,6 +30,7 @@ export const Search: FC<Props> = ({ callback }) => {
         placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
         value={searchInput}
         onChange={handleOnChange}
+        onKeyDown={handleKeyDown}
       ></input>
       <button className="search__button" onClick={handleOnClick}>
         <img
