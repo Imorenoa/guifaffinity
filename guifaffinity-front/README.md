@@ -8,7 +8,7 @@ Project for Bikoschool
 
 ## Figma
 
-https://www.figma.com/file/JJlHcbY8OVzwLOExMihuYV/Sistema-de-dise%C3%B1o---Guifaffinity?type=design&node-id=6-2 q
+https://www.figma.com/file/JJlHcbY8OVzwLOExMihuYV/Sistema-de-dise%C3%B1o---Guifaffinity?type=design&node-id=6-2
 
 ## Installation
 
