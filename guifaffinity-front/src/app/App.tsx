@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Header } from "../components/header/header";
+import { Header } from "../components/header";
 import { Search } from "../components/search";
 import { Panel } from "../components/panel";
 
