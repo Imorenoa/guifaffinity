@@ -1,24 +1,38 @@
-import { FC, KeyboardEventHandler, MouseEventHandler } from "react";
+import { FC, MouseEventHandler, useState } from "react";
 import "./Search.css";
-
 interface Props {
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  action: KeyboardEventHandler<HTMLInputElement> &
-    MouseEventHandler<HTMLButtonElement>;
+  callback: (searchInput: string) => void;
 }
 
-export const Search: FC<Props> = ({ value, onChange, action }) => {
+export const Search: FC<Props> = ({ callback }) => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target) {
+      setSearchInput(event.target.value);
+    }
+  };
+
+  const handleKeyDown = (event: { key: string }) => {
+    if (event.key === "Enter") {
+      callback(searchInput);
+    }
+  };
+
+  const handleOnClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    callback(searchInput);
+  };
+
   return (
     <div className="search">
       <input
         className="search__input"
         placeholder="¿Qué quieres buscar? ¡Encuéntralo!"
-        value={value}
-        onChange={onChange}
-        onKeyUp={action}
+        value={searchInput}
+        onChange={handleOnChange}
+        onKeyDown={handleKeyDown}
       ></input>
-      <button className="search__button" onClick={action}>
+      <button className="search__button" onClick={handleOnClick}>
         <img
           className="search__button--image"
           src="assets/MagnifyingGlass.svg"
