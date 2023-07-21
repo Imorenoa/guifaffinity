@@ -1,0 +1,11 @@
+:root {
+  --spacing-xtiny: 0.25rem;
+  --spacing-tiny: 0.5rem;
+  --spacing-small: 0.75rem;
+  --spacing-mini: 1rem;
+  --spacing-base: 1.5rem;
+  --spacing-medium: 2rem;
+  --spacing-large: 3rem;
+  --spacing-xlarge: 4rem;
+  --spacing-huge: 6rem;
+}
