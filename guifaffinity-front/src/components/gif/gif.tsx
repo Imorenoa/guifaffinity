@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./Gif.css";
+import "./Gif.styles.css";
 
 interface Props {
   id: string;

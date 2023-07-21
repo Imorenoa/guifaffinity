@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Gif } from "../gif";
+import { Gif } from "../Gif";
 import { Gif as GifModel } from "../../domain/Gif";
 import "./Panel.css";
 
