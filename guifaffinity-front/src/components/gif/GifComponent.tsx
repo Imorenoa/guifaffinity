@@ -7,6 +7,6 @@ interface Props {
   alt: string;
 }
 
-export const Gif: FC<Props> = ({ id, src, alt }) => {
+export const GifComponent: FC<Props> = ({ id, src, alt }) => {
   return <img className="gif" key={id} id={id} src={src} alt={alt} />;
 };

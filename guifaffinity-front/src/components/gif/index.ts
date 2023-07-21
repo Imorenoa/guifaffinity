@@ -1,1 +1,1 @@
-export * from "./Gif";
+export * from "./GifComponent";

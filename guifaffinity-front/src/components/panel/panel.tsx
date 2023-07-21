@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Gif } from "../Gif";
+import { GifComponent } from "../Gif";
 import { Gif as GifModel } from "../../domain/Gif";
 import "./Panel.css";
 
@@ -22,7 +22,7 @@ export const Panel: FC<Props> = ({ gifs }) => {
       </div>
       <div className="panel__gifs">
         {gifs.map(({ id, src, alt }) => (
-          <Gif key={id} id={id} src={src} alt={alt} />
+          <GifComponent key={id} id={id} src={src} alt={alt} />
         ))}
       </div>
     </div>
