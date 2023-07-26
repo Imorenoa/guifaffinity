@@ -5,7 +5,7 @@ import { rest } from "msw";
 import { GifDTO } from "../../infrastructures/GifDTO";
 import { Search } from "../../components/search";
 
-describe("app component", () => {
+describe("home component", () => {
   test("displays a gif", async () => {
     const retrievedGif: GifDTO = {
       id: "1",

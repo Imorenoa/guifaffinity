@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "../components/home/Home";
 import { Header } from "../components/header";
 import "./App.css";
+import { Detail } from "../components/detail/Detail";
 
 export const App = () => {
   return (
@@ -10,6 +11,7 @@ export const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

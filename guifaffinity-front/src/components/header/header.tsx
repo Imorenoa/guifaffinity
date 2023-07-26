@@ -5,7 +5,7 @@ export const Header = () => {
     <header>
       <img
         className="logo"
-        src="assets/GuifaffinityLogo.svg"
+        src="/assets/GuifaffinityLogo.svg"
         alt="Logo Guifaffinity"
       />
     </header>
