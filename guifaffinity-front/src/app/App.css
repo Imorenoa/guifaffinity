@@ -1,0 +1,18 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-large);
+  }
+
+.app {
+    font-family: "Open Sans", sans-serif;
+    background: linear-gradient(
+        135deg,
+        var(--color-blue) 0%,
+        var(--color-purple) 50%,
+        var(--color-yellow) 100%
+    );
+    width: 100%;
+}

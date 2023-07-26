@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Home";
-import { Header } from "../header";
 import { Search } from "../search";
 import { Panel } from "../panel";
-import "./Home.css";
 
 import { gifsServiceContainer } from "../../services/_di/GifsService.container";
 import { Gif } from "../../domain/Gif";
@@ -26,13 +24,10 @@ export const Home = () => {
 
   return (
     <div className="home">
-      <main className="mainContainer">
-        <Header />
-        <section>
-          <Search callback={getFilteredGifs}></Search>
-          <Panel gifs={gifs}></Panel>
-        </section>
-      </main>
+      <section>
+        <Search callback={getFilteredGifs}></Search>
+        <Panel gifs={gifs}></Panel>
+      </section>
     </div>
   );
 };
