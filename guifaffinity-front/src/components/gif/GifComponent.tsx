@@ -1,6 +1,5 @@
 import { FC } from "react";
 import "./Gif.styles.css";
-import { Link } from "react-router-dom";
 
 interface Props {
   id: string;
