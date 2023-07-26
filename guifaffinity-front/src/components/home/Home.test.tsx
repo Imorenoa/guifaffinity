@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { App } from "./App";
-import { server } from "../mocks/server.js";
+import { Home } from "./Home";
+import { server } from "../../mocks/server.js";
 import { rest } from "msw";
-import { GifDTO } from "../infrastructures/GifDTO";
-import { Search } from "../components/search";
+import { GifDTO } from "../../infrastructures/GifDTO";
+import { Search } from "../../components/search";
 
 describe("app component", () => {
   test("displays a gif", async () => {
@@ -21,7 +21,7 @@ describe("app component", () => {
       })
     );
 
-    render(<App />);
+    render(<Home />);
     const screenedGif = await screen.findByAltText("Gato con gafas");
 
     expect(screenedGif).toBeVisible();
