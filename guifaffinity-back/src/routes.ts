@@ -27,6 +27,8 @@ const convertToGifsClient = (gifs: Meme[]) => {
 
 // GET /api/gifs
 routes.get("/gifs", (req, res, next) => {
+  console.log('hola');
+  
   const tag = req.query.tag as string;
   const db = req.context.db;
   const gifsDatabase = db.get("memes").take(50).value()
@@ -36,6 +38,19 @@ routes.get("/gifs", (req, res, next) => {
   }
   const gifsClient: Gif[] = convertToGifsClient(gifsDatabase);
   res.status(200).json(gifsClient);
+});
+
+//GET /api/gifs/:id
+routes.get("/gifs/:id", (req, res, next) => { 
+  const db = req.context.db;
+  const gif = db.get("memes").find((gif) => gif.id == req.params.id);
+  if (gif != undefined) {
+    // const gifClient: Gif = convertToGifClient(gif);
+    // res.status(200).json(gifClient);
+    res.status(200).json(gif);
+  } else {
+    res.status(404).json({ error: "GIF not found"});
+  }
 });
 
 export default routes;
