@@ -7,6 +7,23 @@ import Memory from "lowdb/adapters/Memory";
 import { DatabaseSchema, Meme } from "./DatabaseSchema";
 import Gif from "./Interfaces/Gif";
 
+describe("GET /api/gifs/:id", () => {
+  let app: Express;
+  const id: string = 'YleuWir5NTNVXkflSp';
+
+  // Before each test
+  beforeEach(async () => {
+    const adapter = new Memory<DatabaseSchema>("");
+    const db = low(adapter);
+    await db.defaults(dbData).write();
+    app = createApp(db);
+  });
+
+  it("responds with OK", async () => {
+    await request(app).get("/api/gifs/" + id).expect(200);
+  });
+})
+
 describe("GET /api/gifs", () => {
   const gif: Gif = {
     id: "YleuWir5NTNVXkflSp",
