@@ -25,6 +25,17 @@ const convertToGifsClient = (gifs: Meme[]) => {
   }));
 };
 
+const convertToGifClient = (gif: Meme) => {
+  return {
+    id: gif.id,
+    src: gif.images.original.url,
+    likes: 0,
+    date: gif.import_datetime,
+    alt: gif.title,
+    tags: gif.tags,
+  };
+};
+
 // GET /api/gifs
 routes.get("/gifs", (req, res, next) => {
   console.log('hola');
@@ -43,11 +54,10 @@ routes.get("/gifs", (req, res, next) => {
 //GET /api/gifs/:id
 routes.get("/gifs/:id", (req, res, next) => { 
   const db = req.context.db;
-  const gif = db.get("memes").find((gif) => gif.id == req.params.id);
+  const gif = db.get("memes").find((gif) => gif.id == req.params.id).value();
   if (gif != undefined) {
-    // const gifClient: Gif = convertToGifClient(gif);
-    // res.status(200).json(gifClient);
-    res.status(200).json(gif);
+    const gifClient: Gif = convertToGifClient(gif);
+    res.status(200).json(gifClient);
   } else {
     res.status(404).json({ error: "GIF not found"});
   }

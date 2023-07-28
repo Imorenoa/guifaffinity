@@ -9,6 +9,14 @@ import Gif from "./Interfaces/Gif";
 
 describe("GET /api/gifs/:id", () => {
   let app: Express;
+  const gif: Gif = {
+    id: "YleuWir5NTNVXkflSp",
+    src: "https://media4.giphy.com/media/YleuWir5NTNVXkflSp/giphy.gif?cid=be655fb7f245f7d29df0fc743b70e3ee884dbaf31956e789&rid=giphy.gif",
+    likes: 4,
+    date: "2020-08-20 02:24:22",
+    alt: "Movie Brazil GIF by MOODMAN",
+    tags: ["#movie", "#brazil", "#brazil the movie"],
+  };
   const id: string = 'YleuWir5NTNVXkflSp';
 
   // Before each test
@@ -20,7 +28,17 @@ describe("GET /api/gifs/:id", () => {
   });
 
   it("responds with OK", async () => {
-    await request(app).get("/api/gifs/" + id).expect(200);
+    await request(app).get("/api/gifs/" + gif.id).expect(200);
+  });
+
+  it("responds with specified interface", async () => {
+    const response = await request(app).get("/api/gifs/" + gif.id);
+
+    const props: string[] = Object.keys(gif);
+    const returnedGif: Gif = response.body
+    props.forEach((prop) => {
+        expect(returnedGif).toHaveProperty(prop);
+    });
   });
 })
 
