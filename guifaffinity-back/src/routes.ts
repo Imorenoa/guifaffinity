@@ -1,8 +1,11 @@
 import { Response, Router } from "express";
 import Gif from "./Interfaces/Gif";
 import { Meme } from "./DatabaseSchema";
+import { Mapper } from "./mapper";
 
 const routes = Router();
+
+const mapper = new Mapper()
 
 const filterGifsByTag = (databaseGifs: Meme[], tag: string) => {
   return databaseGifs.filter((gif) => gif.tags.includes(`#${tag}`));
@@ -10,36 +13,13 @@ const filterGifsByTag = (databaseGifs: Meme[], tag: string) => {
 
 const returnGifsByTag = (gifs: Meme[], tag: string, res: Response) => {
   const gifsByTag = filterGifsByTag(gifs, tag);
-  const gifsClient: Gif[] = convertToGifsClient(gifsByTag);
+  const gifsClient: Gif[] = mapper.toGifsClient(gifsByTag);
   res.status(200).json(gifsClient);
 };
 
-const convertToGifsClient = (gifs: Meme[]) => {
-  return gifs.map((gif) => ({
-    id: gif.id,
-    src: gif.images.original.url,
-    likes: 0,
-    date: gif.import_datetime,
-    alt: gif.title,
-    tags: gif.tags,
-  }));
-};
-
-const convertToGifClient = (gif: Meme) => {
-  return {
-    id: gif.id,
-    src: gif.images.original.url,
-    likes: 0,
-    date: gif.import_datetime,
-    alt: gif.title,
-    tags: gif.tags,
-  };
-};
 
 // GET /api/gifs
 routes.get("/gifs", (req, res, next) => {
-  console.log('hola');
-  
   const tag = req.query.tag as string;
   const db = req.context.db;
   const gifsDatabase = db.get("memes").take(50).value()
@@ -47,7 +27,7 @@ routes.get("/gifs", (req, res, next) => {
     returnGifsByTag(gifsDatabase, tag, res);
     return;
   }
-  const gifsClient: Gif[] = convertToGifsClient(gifsDatabase);
+  const gifsClient: Gif[] = mapper.toGifsClient(gifsDatabase);
   res.status(200).json(gifsClient);
 });
 
@@ -56,7 +36,7 @@ routes.get("/gifs/:id", (req, res, next) => {
   const db = req.context.db;
   const gif = db.get("memes").find((gif) => gif.id == req.params.id).value();
   if (gif != undefined) {
-    const gifClient: Gif = convertToGifClient(gif);
+    const gifClient: Gif = mapper.toGifClient(gif);
     res.status(200).json(gifClient);
   } else {
     res.status(404).json({ error: "GIF not found"});
