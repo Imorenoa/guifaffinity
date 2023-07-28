@@ -8,4 +8,10 @@ export class FetchGifsRepository implements GifsRepository {
     const res: GifDTO[] = await response.json();
     return res;
   }
+  async getGif(id: string): Promise<Gif> {
+    const response = await fetch(`http://localhost:3001/api/gifs/${id}`);
+    const res: GifDTO = await response.json();
+    return res;
+  }
+
 }
