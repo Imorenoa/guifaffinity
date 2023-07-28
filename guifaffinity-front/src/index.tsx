@@ -5,6 +5,7 @@ import "./_styles/settings/font-size.css";
 import "./_styles/settings/line-height.css";
 import "./_styles/settings/spacing.css";
 import "./_styles/generic/reset.css";
+import "./_styles/generic/titles.css";
 import { App } from "./app/App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";

@@ -16,9 +16,7 @@ export const Panel: FC<Props> = ({ gifs }) => {
           src="assets/Arrow1.svg"
           alt="Icono de busqueda"
         />
-        <h2 className="panel__title--text">
-          Los guif más trendings del momento
-        </h2>
+        <h2 className="title--text">Los guif más trendings del momento</h2>
       </div>
       <div className="panel__gifs">
         {gifs.map(({ id, src, alt }) => (
