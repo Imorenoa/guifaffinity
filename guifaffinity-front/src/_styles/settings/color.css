@@ -10,4 +10,5 @@
   --color-black: #000000;
   --color-grey: #999999;
   --color-white: #ffffff;
+  --color-transparent: rgba(0, 0, 0, 0.62);
 }

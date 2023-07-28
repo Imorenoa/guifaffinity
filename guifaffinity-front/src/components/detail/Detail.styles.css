@@ -1,2 +1,14 @@
-.tag {
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tagContainer__tag {
+  color: var(--color-white);
+  background-color: var(--color-transparent);
+  margin: 0.5rem;
+  padding: var(--spacing-tiny) var(--spacing-base);
+  line-height: 2.5rem;
+  border-radius: 2.5rem;
+  font-size: var(--font-size-h3);
 }
