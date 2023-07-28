@@ -1,9 +1,9 @@
-.tagContainer {
+.detail__tagContainer {
   display: flex;
   flex-wrap: wrap;
 }
 
-.tagContainer__tag {
+.detail__tagContainer--tag {
   color: var(--color-white);
   background-color: var(--color-transparent);
   margin: 0.5rem;

@@ -23,11 +23,17 @@ export const Detail = () => {
   return (
     <>
       <h2 className="title__text">{gif?.alt}</h2>
-      <div className="detail__container">
-        <img key={gif?.id} id={gif?.id} src={gif?.src} alt={gif?.alt} />
-        <div className="tagContainer">
+      <div className="detail">
+        <img
+          className="detail__image"
+          key={gif?.id}
+          id={gif?.id}
+          src={gif?.src}
+          alt={gif?.alt}
+        />
+        <div className="detail__tagContainer">
           {gif?.tags.map((tag) => (
-            <p className="tagContainer__tag">{tag}</p>
+            <p className="detail__tagContainer--tag">{tag}</p>
           ))}
         </div>
       </div>
